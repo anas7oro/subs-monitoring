@@ -1,0 +1,21 @@
+# config.yaml
+
+# Discord webhook URL for notifications
+discord_webhook_url: "YOUR_DISCORD_WEBHOOK_URL"
+
+# List of subdomain enumeration tools to use
+enumeration_tools:
+  - "subfinder -d {domain}"
+  - "amass enum -passive -d {domain}"
+  - "assetfinder --subs-only {domain}"
+
+# Monitoring interval in hours
+monitoring_interval: 24  # Run monitoring every 24 hours
+
+# PostgreSQL Database Configuration
+database:
+  host: "localhost"
+  port: 5432
+  dbname: "subdomains_db"
+  user: "mydbuser"
+  password: "mypassword"

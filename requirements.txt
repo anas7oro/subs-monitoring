@@ -1,0 +1,4 @@
+requests
+schedule
+PyYAML
+psycopg2-binary
