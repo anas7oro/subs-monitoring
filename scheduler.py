@@ -25,7 +25,7 @@ def monitor():
         print("No domains to monitor.")
         return
 
-    # Adjust max_workers as needed based on your VPS resources
+    # Adjust as needed based on your server resources
     with ThreadPoolExecutor(max_workers=5) as executor:
         executor.map(scan_and_notify, domains)
 
@@ -36,8 +36,7 @@ def start_scheduler():
 
     schedule.every(interval).hours.do(monitor)
     print(f"Scheduler started. Monitoring every {interval} hours.")
-    # Run an immediate scan at startup
-    monitor()
+    monitor()  # Run immediately on start
 
     while True:
         schedule.run_pending()
